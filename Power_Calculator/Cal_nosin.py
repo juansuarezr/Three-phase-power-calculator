@@ -190,7 +190,7 @@ def GenerateCSV(VoltageFile,CurrentFile,root):
     
     df = pd.DataFrame(Calculations, columns = ['Variable', 'Value'])
     try:
-        df.to_csv('archivo.csv')
+        df.to_csv('Power_data.csv')
     except:
         pass
     

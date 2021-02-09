@@ -111,14 +111,6 @@ class CargaArchivos(tk.Frame):
             self.labelContinue["text"] = "An error occurred while processing the data, please make sure the csv files are correct."
     
 
-#class Tabla(tk.Frame):
- #   def __init__(self,origin,df,*args, **kwargs):
-  #      tk.Frame.__init__(self,origin,df,*args,**kwargs)
-   #     self.Table_interface = tk.Toplevel(origin)
-    #    self.table = tk.Text(self.Table_interface)
-     #   self.table.insert(tk.INSERT, df.to_string())
-      #  self.table.pack()
-        
         
 if __name__ == "__main__":
     root = tk.Tk()
