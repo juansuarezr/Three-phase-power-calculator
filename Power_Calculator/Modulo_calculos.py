@@ -12,10 +12,9 @@ import matplotlib.pyplot as plt
 
 
 headers_v = ['Harmonic_order','Voltage_A','Phase_A','Voltage_B','Phase_B','Voltage_C','Phase_C']
-Voltages_frame = pd.read_csv('Voltages.txt',names=headers_v,sep=',')
+
 
 headers_i = ['Harmonic_order','Current_A','Phase_A','Current_B','Phase_B','Current_C','Phase_C']
-Currents_frame = pd.read_csv('Currents.txt',names=headers_i,sep=',')
 
 
 
