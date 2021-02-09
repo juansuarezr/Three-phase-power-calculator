@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import Modulo_calculos as mc
 import pandas as pd
+import tkinter as tk
 
 def ThreePhaseNonSinusoidal(VoltageFile,CurrentFile):
     headers_v = ['Harmonic_order','Voltage_A','Phase_A','Voltage_B','Phase_B','Voltage_C','Phase_C']
@@ -110,7 +111,14 @@ def ThreePhaseNonSinusoidal(VoltageFile,CurrentFile):
     
     plt.show()
     
-def GenerateCSV(VoltageFile,CurrentFile):
+    
+def tabla(origin,df):
+    Table_interface = tk.Toplevel(origin)
+    table = tk.Text(Table_interface)
+    table.insert(tk.INSERT, df.to_string())
+    table.pack()
+    
+def GenerateCSV(VoltageFile,CurrentFile,root):
     headers_v = ['Harmonic_order','Voltage_A','Phase_A','Voltage_B','Phase_B','Voltage_C','Phase_C']
     Voltages_frame = pd.read_csv(VoltageFile,names=headers_v,sep=',')
     
@@ -181,7 +189,17 @@ def GenerateCSV(VoltageFile,CurrentFile):
                              vector_power_factor]}
     
     df = pd.DataFrame(Calculations, columns = ['Variable', 'Value'])
-    df.to_csv('archivo.csv')
+    try:
+        df.to_csv('archivo.csv')
+    except:
+        pass
+    
+    
+
+    tabla(root,df)
+
+
+
     return df
 
 

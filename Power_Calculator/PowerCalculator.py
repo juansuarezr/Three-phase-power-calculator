@@ -101,7 +101,7 @@ class CargaArchivos(tk.Frame):
     def InterfazNoSinusoidal(self):
         try:
             cn.ThreePhaseNonSinusoidal(self.file_path1,self.file_path2)
-            cn.GenerateCSV(self.file_path1,self.file_path2)
+            cn.GenerateCSV(self.file_path1,self.file_path2,self.parent)
         except:
             self.file_path1 = ""
             self.file_path2 = ""
